@@ -1,24 +1,34 @@
 class Componente extends HTMLElement{
 
+    constructor (){
+        element.attachShadow({ mode: "open" });
+    
+    }
 
     connectedCallback() {
-        console.log("Custom square element added to page.");
-        updateStyle(this);
-      }
-    
-      attributeChangedCallback(name, oldValue, newValue) {
-        console.log("Custom square element attributes changed.");
-        updateStyle(this);
+       this.shadowRoot(['names', 'names', 'names']);
       }
 
-constructor(){
-    element.attachShadow({ mode: "open" });
     
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.render();
+      }
+
+
+      render(){
+        this.shadowRoot.innerHTML = `
+        
+        `
+      }
+
+
 }
 
 
 
-}
+
+
+
 
 
 
