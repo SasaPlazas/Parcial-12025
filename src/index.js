@@ -1,15 +1,32 @@
-class AppContainer extends HTMLElement {
+class Componente extends HTMLElement{
 
-constructor(){}
+    constructor (){  
+        super();
+    }
 
-shadowRoot(){}
 
 
-getObservedAttributes(){
+
     
-}
+        element.attachShadow({ mode: "open" });
+   
+    
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.render();
+      }
+
+
+      render(){
+        this.shadowRoot.innerHTML = `
+
+        
+        `;
+
+      }
 
 
 }
 
-export as AppContainer;
+Componente('mi-componente', Componente); 
+
+export as namespace miComponente;

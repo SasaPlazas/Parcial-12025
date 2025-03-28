@@ -1,8 +1,10 @@
 class Componente extends HTMLElement{
 
     constructor (){
-        element.attachShadow({ mode: "open" });
-        element.shadowRoot();
+
+        super();
+        // element.attachShadow({ mode: "open" });
+        // element.shadowRoot();
     }
 
 
@@ -37,6 +39,9 @@ class Componente extends HTMLElement{
 
 }
 
+customElements.define("mi-componente", Componente);
+
+export as namespace Componente;
 
 
 
