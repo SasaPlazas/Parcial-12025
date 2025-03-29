@@ -2,8 +2,10 @@
   "name": "parcial1dca2025ww",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "serve"
+
   },
   "author": "",
   "license": "ISC",

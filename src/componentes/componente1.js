@@ -1,19 +1,20 @@
 class Componente extends HTMLElement{
 
+
+    static observedAttributes = ['destino', 'duracion', 'costo', 'descripcion', 'actividades', 'disponibilidad', 'img', 'calificacion','tipo', 'guia'];
+
+
     constructor (){
 
         super();
-        // element.attachShadow({ mode: "open" });
-        // element.shadowRoot();
+        
+        
     }
-
-
-
     connectedCallback() {
-        getAttribute(['destino', 'duracion', 'costo', 'descripcion', 'actividades', 'disponibilidad', 'img', 'calificacion','tipo', 'guia' ]);
+      element.attachShadow({ mode: "open" });
+        element.shadowRoot();
      }
 
-    
     attributeChangedCallback(name, oldValue, newValue) {
         this.render();
       }
@@ -22,16 +23,21 @@ class Componente extends HTMLElement{
       render(){
         this.shadowRoot.innerHTML = `
       
-        <destino>${this.destino}</destino>
-        <duracion>${this.duracion}</duracion>
-        <costo>${this.costo}</costo>
-        <descripcion>${this.descripcion}</descripcion>
-        <actividades>${this.actividades}</actividades>
-        <disponibilidad>${this.disponibilidad}</disponibilidad>
+        <section>
+        
+         </section>
+        <h3>${this.destino}</h3>
+        <h3>${this.duracion}</h3>
+        <h3>${this.costo}</h3>
+        <h3>${this.descripcion}</h3>
+        <h3>${this.actividades}</h3>
+        <h3>${this.disponibilidad}</h3>
         <img src="${this.img}" alt="${this.descripcion}">
-        <calificacion>${this.calificacion}</calificacion>
-        <tipo>${this.tipo}</tipo>
-        <guia>${this.guia}</guia>
+        <h3>${this.calificacion}</h3>
+        <h3>${this.tipo}</h3>
+        <h3>${this.guia}</h3>
+        
+        </section>
         `;
 
       }
@@ -41,7 +47,7 @@ class Componente extends HTMLElement{
 
 customElements.define("mi-componente", Componente);
 
-export as namespace Componente;
+export default Componente;
 
 
 

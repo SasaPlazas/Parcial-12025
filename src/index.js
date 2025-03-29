@@ -1,24 +1,20 @@
-class Componente extends HTMLElement{
+import * as Componente from "./componentes/componente1.js";
 
-    constructor (){  
+class AppContainer extends HTMLElement{
+
+    constructor (){
+
         super();
+        
+        
     }
 
-
-
-
-    
-        element.attachShadow({ mode: "open" });
-   
-    
-    attributeChangedCallback(name, oldValue, newValue) {
-        this.render();
-      }
+    connectedCallback() {
+     }
 
 
       render(){
         this.shadowRoot.innerHTML = `
-
         
         `;
 
@@ -27,6 +23,11 @@ class Componente extends HTMLElement{
 
 }
 
-Componente('mi-componente', Componente); 
+customElements.define("app-container", AppContainer);
+export default AppContainer;
 
-export as namespace miComponente;
+
+
+
+
+
